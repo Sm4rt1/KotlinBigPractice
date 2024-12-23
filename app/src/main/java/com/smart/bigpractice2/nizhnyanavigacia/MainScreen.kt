@@ -7,15 +7,15 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.smart.bigpractice2.spisok.ListBrains
+import com.smart.bigpractice2.model.JokeItemList
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MainScreen(listBrains: ListBrains) {
+fun MainScreen(jokeItemList: JokeItemList) {
     val navController = rememberNavController()
     Scaffold(bottomBar = { NavBrains(navController = navController) }) {
         Box(modifier = Modifier.padding(it)) {
-            NavGraph(navHostController = navController, listBrains)
+            NavGraph(navHostController = navController, jokeItemList)
         }
     }
 }
